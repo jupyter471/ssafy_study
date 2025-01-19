@@ -2,7 +2,7 @@
 #크기 탐색 -> 좌,하,대각선
 #붙였다 뗐다 하면서 최솟값을 구해야함 dfs
 #색종이를 다쓰거나
-# min_count보다 커지면 탐색 종료 후 다른 길 찾기 백트랙킹 -> 이 조건 못 씀
+# min_count보다 커지면 탐색 종료 후 다른 길 찾기 백트랙킹 !!! <- 중요 0.4초 줄임
 #단순히 1부터 5까지 다 붙여보면됨
 import sys
 sys.setrecursionlimit(10**7)
@@ -39,6 +39,9 @@ def remove_papers(r,c,size):
 def stick(r,c,cnt):
     #0,0부터 한줄씩 탐색
     global min_count
+    if cnt >= min_count:
+        min_count = min_count
+        return
 
     if c>=10:
         stick(r+1,0,cnt)
