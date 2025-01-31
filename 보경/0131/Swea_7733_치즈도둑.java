@@ -40,6 +40,7 @@ public class Swea_7733_치즈도둑 {
                                             int nc = crr[1] + d_c[k];
                                             if (nr >= 0 && nr < N && nc >= 0 && nc < N) {
                                                 dq.add(new int[]{nr,nc});
+                                                
                                             }
                                         }
                                     }
