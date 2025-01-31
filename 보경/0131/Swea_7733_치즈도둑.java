@@ -28,20 +28,12 @@ public class Swea_7733_치즈도둑 {
                 Deque<int[]> dq = new ArrayDeque<>();
                 for (int i = 0; i < N; i++) {
                     for (int j = 0; j < N; j++) {
-                        if (!visited[i][j]) {
-                            if (cheese[i][j] <= d) {
-                                visited[i][j] = true;
-                                continue;
-                            }
+                        if (!visited[i][j] && cheese[i][j] > d) {
                             dq.add(new int[]{i,j});
                             while (!dq.isEmpty()) {
                                 int[] crr = dq.pollFirst();
-                                if (!visited[crr[0]][crr[1]]) {    //안하면 시간초과 뜸 queue에 넣었을 때는 방문안한상태였어도 큐에 있는 동안 다른 노드로부터 탐색에서 방문했을 수도 있음
-                                    if (cheese[crr[0]][crr[1]] <= d) {
-                                        visited[crr[0]][crr[1]] = true;
-                                    }
-                                    else {
-                                        //사방탐색
+                                if (!visited[crr[0]][crr[1]]) {
+                                    if (cheese[crr[0]][crr[1]] > d) {
                                         visited[crr[0]][crr[1]] = true;
                                         for (int k = 0; k < 4; k++) {
                                             int nr = crr[0] + d_r[k];
