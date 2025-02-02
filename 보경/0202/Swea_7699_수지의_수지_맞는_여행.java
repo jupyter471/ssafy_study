@@ -1,8 +1,7 @@
-import java.awt.Point;
 import java.util.*;
 import java.io.*;
 
-public class Boj_7699_수지의_수지_맞는_여행 {
+public class Swea_7699_수지의_수지_맞는_여행 {
     static int result, N, M;
     public static void main(String[] args) throws Exception {
         //각 알파벳 처음일 때만 방문 -> 1차원 방문 체크
